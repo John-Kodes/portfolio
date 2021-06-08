@@ -78,6 +78,8 @@ const AboutSection = () => {
               CSS Grid
               <br />
               FlexBox
+              <br />
+              Responsive
             </p>
           </TechSkillCard>
 
@@ -144,7 +146,7 @@ const TechSkillsContainer = styled(motion.div)`
     grid-column: 4;
 
     &:hover {
-      height: 21rem;
+      height: 23rem;
     }
   }
 
