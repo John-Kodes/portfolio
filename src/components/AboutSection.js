@@ -133,6 +133,19 @@ const TechSkillsContainer = styled(motion.div)`
   .react__icon {
     grid-column: 2;
 
+    /* height: 25rem; */
+    p::after {
+      content: "";
+      background-color: #e9f0f5;
+      position: absolute;
+      height: 11.3rem;
+      width: 100%;
+      bottom: -1.1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
     &:hover {
       height: 25rem;
     }
@@ -147,6 +160,18 @@ const TechSkillsContainer = styled(motion.div)`
 
     &:hover {
       height: 23rem;
+    }
+
+    p::after {
+      content: "";
+      background-color: #e9f0f5;
+      position: absolute;
+      height: 9.3rem;
+      width: 100%;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
     }
   }
 
@@ -186,7 +211,11 @@ const TechSkillCard = styled(motion.button)`
   }
 
   p {
+    width: 100%;
+    position: relative;
+    color: #656d86;
     font-size: 1.6rem;
+    z-index: 2;
   }
 `;
 
