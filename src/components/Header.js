@@ -1,6 +1,6 @@
 // SVG & Img
 import { ReactComponent as HeaderSvg } from "../img/HeaderSvg.svg";
-import photo from "../img/PHOTOFINALcomp.png";
+import photo from "../img/PHOTOFINALcomp720.png";
 // Animation
 import { motion } from "framer-motion";
 // Styles
