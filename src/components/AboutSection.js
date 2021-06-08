@@ -22,10 +22,10 @@ const AboutSection = () => {
           <p>
             Hello! My name is Daniel. I’m a Front-End Developer based in Dubai.
             I specialise in creating engaging and interactive experiences, and
-            also functional interfaces using React. I write code and improve my
-            design skills everyday. <br />
-            <br /> I have a passion for creating code, animations and creating
-            intuitive, dynamic user experiences.
+            also functional interfaces using React. I spend everyday improving
+            both my coding, and design skills. <br />
+            <br /> I have a passion for creating code, animations and also
+            creating intuitive, dynamic user experiences.
           </p>
         </AboutText>
 
@@ -203,7 +203,7 @@ const SkillCard = styled(motion.div)`
   border: 2px solid #e3f2f8;
   background-color: #fff;
   border-radius: 2rem;
-  box-shadow: 0 1rem 4rem ${(props) => props.theme.boxShadow200};
+  box-shadow: 0 1rem 2rem ${(props) => props.theme.boxShadow100};
 
   h2 {
     position: relative;
