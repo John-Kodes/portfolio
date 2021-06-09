@@ -1,5 +1,6 @@
 // SVG
 import { ReactComponent as PenIcon } from "../img/penIcon.svg";
+import { ReactComponent as Logo } from "../img/JDS_logo.svg";
 // Animation
 import { motion } from "framer-motion";
 // Styles
@@ -8,6 +9,7 @@ import styled from "styled-components";
 const Nav = () => {
   return (
     <StyledNav>
+      <Logo className="logo" />
       <NavLink>Get to know me</NavLink>
       <NavLink>Stuff I've made</NavLink>
       <ContactBtn>
@@ -23,7 +25,7 @@ const StyledNav = styled(motion.nav)`
   grid-row: 1/2;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   gap: 8rem;
 
@@ -31,6 +33,10 @@ const StyledNav = styled(motion.nav)`
 
   position: relative;
   z-index: 3;
+
+  .logo {
+    margin-right: auto;
+  }
 `;
 
 const NavLink = styled(motion.button)`

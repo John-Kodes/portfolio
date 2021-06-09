@@ -8,6 +8,7 @@ import GlobalTheme from "./globals/GlobalTheme";
 import GlobalStyles from "./globals/GlobalStyles";
 import Header from "./components/Header";
 import AboutSection from "./components/AboutSection";
+import ProjectsSection from "./components/ProjectsSection";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Nav />
         <Header />
         <AboutSection />
+        <ProjectsSection />
       </PageLayout>
     </ThemeProvider>
   );
@@ -33,7 +35,7 @@ const PageLayout = styled(motion.div)`
     )
     [main-content-end margin-right-start] minmax(1rem, 1fr) [margin-right-end];
 
-  grid-template-rows: 6.6rem 80vh 136.7rem;
+  grid-template-rows: 6.6rem 80vh 136.7rem minmax(50rem, max-content);
   align-items: center;
   align-content: center;
 

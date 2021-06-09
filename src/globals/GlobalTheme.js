@@ -7,7 +7,8 @@ const GlobalTheme = {
   boxShadow100: "rgba(104, 166, 238, 0.1)",
   boxShadow200: "rgba(104, 166, 238, 0.2)",
   boxShadow300: "rgba(104, 166, 238, 0.3)",
-  textColor: "#869c9c",
+  textColor: "#868c9c",
+  headingColor: "#474a5c",
 };
 
 // To use: ${(props) => props.theme.primaryColor100}

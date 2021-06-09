@@ -1,3 +1,7 @@
+// Animation
+import { motion } from "framer-motion";
+// Styles
+import styled from "styled-components";
 // SVG
 import { ReactComponent as DevIcon } from "../img/DevIcon.svg";
 import { ReactComponent as DesignIcon } from "../img/DesignIcon.svg";
@@ -8,10 +12,6 @@ import { ReactComponent as JavascriptIcon } from "../img/javascript.svg";
 import { ReactComponent as HtmlIcon } from "../img/html5.svg";
 import { ReactComponent as ScssAndCssIcon } from "../img/scssAndCss.svg";
 import { ReactComponent as GitAndGithubIcon } from "../img/gitAndGithub.svg";
-// Animation
-import { motion } from "framer-motion";
-// Styles
-import styled from "styled-components";
 
 const AboutSection = () => {
   return (
