@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <AboutSection />
         <ProjectsSection />
         <ContactSection />
+        <Footer />
       </PageLayout>
     </ThemeProvider>
   );
