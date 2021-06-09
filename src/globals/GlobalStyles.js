@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: inherit;
     }
     body, html {
+        overflow: overlay; // allows scrollbar to go over the page
         overflow-x: hidden;
     }
 
@@ -66,6 +67,15 @@ const GlobalStyles = createGlobalStyle`
     ::selection {
         background-color: ${(props) => props.theme.primaryColor100};
         color: black;
+    }
+
+    ::-webkit-scrollbar{
+        background-color: transparent;
+        width: 10px;
+        &-thumb{
+            background-color: ${(props) => props.theme.primaryColor100};
+            border-radius: 100rem;
+        }
     }
 `;
 

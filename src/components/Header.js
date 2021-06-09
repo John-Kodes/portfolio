@@ -3,6 +3,7 @@ import { ReactComponent as HeaderSvg } from "../img/HeaderSvg.svg";
 import photo from "../img/PHOTOFINALcomp720.png";
 // Animation
 import { motion } from "framer-motion";
+import { letterAnim } from "../animations";
 // Styles
 import styled from "styled-components";
 
@@ -16,12 +17,34 @@ const Header = () => {
         />
         <HeaderSvg className="svg" />
         <Content>
-          <FirstName>John Daniel</FirstName>
-          <LastName>Semine</LastName>
+          <FirstName>
+            <motion.div whileHover={letterAnim}>J</motion.div>
+            <motion.div whileHover={letterAnim}>o</motion.div>
+            <motion.div whileHover={letterAnim}>h</motion.div>
+            <motion.div whileHover={letterAnim}>n</motion.div>&nbsp;
+            <motion.div whileHover={letterAnim}>D</motion.div>
+            <motion.div whileHover={letterAnim}>a</motion.div>
+            <motion.div whileHover={letterAnim}>n</motion.div>
+            <motion.div whileHover={letterAnim}>i</motion.div>
+            <motion.div whileHover={letterAnim}>e</motion.div>
+            <motion.div whileHover={letterAnim}>l</motion.div>
+          </FirstName>
+          <LastName>
+            <motion.div whileHover={letterAnim}>S</motion.div>
+            <motion.div whileHover={letterAnim}>e</motion.div>
+            <motion.div whileHover={letterAnim}>m</motion.div>
+            <motion.div whileHover={letterAnim}>i</motion.div>
+            <motion.div whileHover={letterAnim}>n</motion.div>
+            <motion.div whileHover={letterAnim}>e</motion.div>
+          </LastName>
           <Desc>
-            <FloatAnim>Front-end Webdeveloper</FloatAnim>&nbsp; \ &nbsp;
-            <FloatAnim>Designer</FloatAnim>&nbsp; \ &nbsp;
-            <FloatAnim>Creative</FloatAnim>
+            <motion.div whileHover={letterAnim(-4)}>
+              Front-end Webdeveloper
+            </motion.div>
+            &nbsp; \ &nbsp;
+            <motion.div whileHover={letterAnim(-4)}>Designer</motion.div>&nbsp;
+            \ &nbsp;
+            <motion.div whileHover={letterAnim(-4)}>Creative</motion.div>
           </Desc>
           <BtnContainer>
             <AboutBtn>About me</AboutBtn>
@@ -49,14 +72,6 @@ const Desc = styled.div`
     height: 2px;
     background-color: currentColor;
     transform: translateX(-50%);
-  }
-`;
-
-const FloatAnim = styled.div`
-  transition: all 0.2s;
-
-  &:hover {
-    transform: translateY(-4px);
   }
 `;
 
@@ -97,6 +112,7 @@ const Content = styled.div`
 `;
 
 const FirstName = styled(motion.div)`
+  display: flex;
   font-family: "Yeseva One", sans-serif;
   font-size: 6.1rem;
   line-height: 1.1;

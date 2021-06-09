@@ -9,6 +9,7 @@ import GlobalStyles from "./globals/GlobalStyles";
 import Header from "./components/Header";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
+import ContactSection from "./components/ContactSection";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <AboutSection />
         <ProjectsSection />
+        <ContactSection />
       </PageLayout>
     </ThemeProvider>
   );
