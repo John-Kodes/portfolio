@@ -1,5 +1,7 @@
 // SVG & Img
 import { ReactComponent as HeaderSvg } from "../img/HeaderSvg.svg";
+import { ReactComponent as CameraIcon } from "../img/CameraIcon.svg";
+import { ReactComponent as CreditTab } from "../img/CreditTab.svg";
 import photo from "../img/PHOTOFINALcomp720.png";
 // Animation
 import { motion } from "framer-motion";
@@ -15,6 +17,13 @@ const Header = () => {
           src={photo}
           alt="John Daniel Semine Photo. Credit: Joan Semine"
         />
+        <CreditBox className="credit">
+          <CreditTab />
+          <Text>
+            <CameraIcon /> <p>: Joan Semine</p>
+          </Text>
+        </CreditBox>
+
         <HeaderSvg className="svg" />
         <Content>
           <FirstName>
@@ -55,6 +64,44 @@ const Header = () => {
     </>
   );
 };
+
+const Text = styled.div`
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #606572;
+  }
+  svg {
+    margin-bottom: 2px;
+  }
+`;
+
+const CreditBox = styled(motion.div)`
+  position: absolute;
+  right: 0;
+
+  display: grid;
+  grid-template-columns: min-content;
+  align-items: center;
+  justify-items: center;
+
+  bottom: -6.7rem;
+  z-index: 3;
+
+  transition: transform 0.2s ease-in-out 3s;
+
+  svg {
+    display: block;
+    grid-row: 1;
+    grid-column: 1;
+  }
+`;
 
 const Desc = styled.div`
   display: flex;
@@ -98,6 +145,10 @@ const Photo = styled(motion.img)`
   bottom: -20rem;
   right: -10rem;
   z-index: 2;
+
+  &:hover ~ .credit {
+    transform: translateY(-4.5rem);
+  }
 `;
 
 const Content = styled.div`
