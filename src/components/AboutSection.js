@@ -92,11 +92,22 @@ const AboutSection = () => {
             <GitAndGithubIcon />
             <h4>GitHub / Git</h4>
           </TechSkillCard>
+          <Caption>
+            I spend most of my time learning new skills and technologies to use,
+            to make your websites better.
+          </Caption>
         </TechSkillsContainer>
       </AboutGrid>
     </StyledAboutSection>
   );
 };
+const Caption = styled(motion.p)`
+  grid-column: 1/-1;
+  margin-top: 3rem;
+  width: 50ch;
+  text-align: center;
+`;
+
 const TechSkillsContainer = styled(motion.div)`
   grid-column: 1/-1;
 
@@ -147,7 +158,7 @@ const TechSkillsContainer = styled(motion.div)`
     }
 
     &:hover {
-      height: 25rem;
+      height: 29rem;
     }
   }
 
@@ -159,7 +170,7 @@ const TechSkillsContainer = styled(motion.div)`
     grid-column: 4;
 
     &:hover {
-      height: 23rem;
+      height: 26rem;
     }
 
     p::after {
