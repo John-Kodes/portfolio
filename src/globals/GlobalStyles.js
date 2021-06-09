@@ -21,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
     // Yeseva One = 400
     // Montserrat = 300/400/600
     body{
-        box-sizing: content-box;
+        box-sizing: border-box;
         font-family: 'Ubuntu', sans-serif;
         font-weight: 400;
         background-color: ${(props) => props.theme.pageBg100};

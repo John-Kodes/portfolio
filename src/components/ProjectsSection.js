@@ -16,7 +16,7 @@ const ProjectsSection = () => {
 
     hover: {
       x: 6,
-      transition: { duration: 0.05 },
+      transition: { duration: 0.2 },
     },
   };
   return (
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
           </div>
         </CardDesc>
         <CardContent>
-          <motion.button whileHover={{ width: "12rem" }}>
+          <motion.button whileHover={{ width: "14rem" }}>
             <GithubLogo />
             <p>view code</p>
           </motion.button>
@@ -96,17 +96,14 @@ const CardContent = styled(motion.div)`
     border: 3px solid #fff;
     border-radius: 100rem;
     padding: 5px 5px 5px 12px;
-    width: 2.5rem;
+    width: 4.8rem;
 
-    transition: all 0.5s;
     overflow: hidden;
 
     svg {
       display: block;
-      min-height: 3.2rem;
-      min-width: 3.2rem;
-      max-height: 3.2rem;
       max-width: 3.2rem;
+      min-width: 3.2rem;
     }
 
     p {
@@ -137,7 +134,7 @@ const CardContent = styled(motion.div)`
 `;
 const CardDesc = styled(motion.div)`
   position: relative;
-  flex: 0 0 calc(50% - 12rem);
+  flex: 0 0 50%;
 
   display: flex;
   flex-direction: column;
@@ -160,8 +157,6 @@ const CardDesc = styled(motion.div)`
     border-radius: 10rem 0 0 10rem;
     box-shadow: 0 4px 2rem ${(props) => props.theme.boxShadow300};
 
-    transition: transform 0.2s;
-
     svg {
       display: block;
       height: 2rem;
@@ -182,13 +177,12 @@ const CardDesc = styled(motion.div)`
   }
 
   ul {
-    margin-left: 2rem;
+    margin: 1rem 0 0 2rem;
   }
 `;
 
 const ProjectCard = styled(motion.div)`
   display: flex;
-  box-sizing: content-box;
 
   background-color: #fff;
   width: 100%;
