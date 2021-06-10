@@ -94,7 +94,7 @@ const CreditBox = styled(motion.div)`
   bottom: -6.7rem;
   z-index: 3;
 
-  transition: transform 0.2s ease-in-out 3s;
+  transition: transform 0.2s ease-in-out 2s;
 
   svg {
     display: block;

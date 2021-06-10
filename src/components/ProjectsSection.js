@@ -24,13 +24,16 @@ const ProjectsSection = () => {
       <h1>Stuff I've made</h1>
       <ProjectCard>
         <CardDesc>
-          <motion.button
+          <motion.a
             variants={visitBtnAnim}
             initial="initial"
             whileHover="hover"
+            target="_blank"
+            href="https://blackjax.netlify.app/"
+            rel="noreferrer"
           >
             Visit Project <Arrow />
-          </motion.button>
+          </motion.a>
           <h2>BlackJax</h2>
           <p>
             A Recreation of the game “BlackJack” in the form of a web browser
@@ -52,10 +55,15 @@ const ProjectsSection = () => {
           </div>
         </CardDesc>
         <CardContent>
-          <motion.button whileHover={{ width: "14rem" }}>
+          <motion.a
+            whileHover={{ width: "14rem" }}
+            target="_blank"
+            href="https://github.com/John-Kodes/BlackJax"
+            rel="noreferrer"
+          >
             <GithubLogo />
             <p>view code</p>
-          </motion.button>
+          </motion.a>
           <h2>
             <motion.div whileHover={letterAnim}>B</motion.div>
             <motion.div whileHover={letterAnim}>l</motion.div>
@@ -83,7 +91,7 @@ const CardContent = styled(motion.div)`
   background-attachment: fixed;
   z-index: 2;
 
-  button {
+  a {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -141,7 +149,7 @@ const CardDesc = styled(motion.div)`
   gap: 2.5rem;
   padding: 3rem 6rem;
 
-  button {
+  a {
     position: absolute;
     right: 0;
     bottom: 3rem;

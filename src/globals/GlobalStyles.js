@@ -27,6 +27,10 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${(props) => props.theme.pageBg100};
         font-size: 1.8rem;
     }
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
     p, ul {
         color: ${(props) => props.theme.textColor};
         line-height: 1.5;

@@ -202,7 +202,7 @@ const TechSkillCard = styled(motion.button)`
   align-items: center;
   grid-row: 2;
 
-  height: 13.5rem;
+  height: 17rem;
   width: 100%;
   gap: 2rem;
   padding: 2rem 0;

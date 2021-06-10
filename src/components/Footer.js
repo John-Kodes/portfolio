@@ -14,13 +14,22 @@ const Footer = () => {
         <a
           target="_blank"
           href="https://www.linkedin.com/in/john-daniel-semine-949ab0204/"
+          rel="noreferrer"
         >
           <LinkedInLink />
         </a>
-        <a target="_blank" href="https://github.com/John-Kodes/">
+        <a
+          target="_blank"
+          href="https://github.com/John-Kodes/"
+          rel="noreferrer"
+        >
           <GitHubLink />
         </a>
-        <a target="_blank" href="https://twitter.com/DanieI_js">
+        <a
+          target="_blank"
+          href="https://twitter.com/DanieI_js"
+          rel="noreferrer"
+        >
           <TwitterLink />
         </a>
       </SocialBox>
