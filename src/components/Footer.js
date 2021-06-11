@@ -45,13 +45,19 @@ const SocialBox = styled(motion.div)`
 
   svg {
     display: block;
-    filter: brightness(110%);
+  }
+  path {
+    fill: #9fa8b6;
+    transition: fill 0.2s;
   }
 
   a {
     transition: all 0.2s;
     &:hover {
       transform: translateY(-4px);
+    }
+    &:hover path {
+      fill: ${(p) => p.theme.black};
     }
   }
 `;

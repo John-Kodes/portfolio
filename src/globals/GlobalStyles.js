@@ -30,6 +30,9 @@ const GlobalStyles = createGlobalStyle`
     a {
         color: inherit;
         text-decoration: inherit;
+        &:focus {
+	    outline: ${(p) => p.theme.black} solid;   
+        }
     }
     p, ul {
         color: ${(props) => props.theme.textColor};
@@ -66,8 +69,41 @@ const GlobalStyles = createGlobalStyle`
 	    padding: 0;
 	    font: inherit;
 	    cursor: pointer;
-	    outline: inherit;
+        font-family: 'Ubuntu', sans-serif;
+
+        &:focus {
+	    outline: ${(p) => p.theme.black} solid;   
+        }
     }
+
+    label {
+        font-size: 1.6rem;
+        color: ${(p) => p.theme.black};
+    }
+
+    input, textarea {
+        background: none;
+        border: none;
+        border-bottom: 2px solid #ddd; 
+        outline: inherit;
+        resize: none;
+        
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.4rem;
+        padding-bottom: .5rem;
+
+        transition: all 0.2s;
+
+        &:focus {
+            border-bottom: 2px solid ${(p) => p.theme.primaryColor100}; 
+            &:invalid {
+
+            border-bottom: 2px solid #ff0080; 
+            }
+        }
+
+    }
+
     ::selection {
         background-color: ${(props) => props.theme.primaryColor100};
         color: black;

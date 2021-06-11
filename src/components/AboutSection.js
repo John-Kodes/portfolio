@@ -195,7 +195,7 @@ const TechSkillsContainer = styled(motion.div)`
   }
 `;
 
-const TechSkillCard = styled(motion.button)`
+const TechSkillCard = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -227,6 +227,7 @@ const TechSkillCard = styled(motion.button)`
     color: #656d86;
     font-size: 1.6rem;
     z-index: 2;
+    text-align: center;
   }
 `;
 
@@ -244,6 +245,10 @@ const SkillCard = styled(motion.div)`
   background-color: #fff;
   border-radius: 2rem;
   box-shadow: 0 1rem 2rem ${(props) => props.theme.boxShadow100};
+
+  svg {
+    /* fill: orange; */
+  }
 
   h2 {
     position: relative;
