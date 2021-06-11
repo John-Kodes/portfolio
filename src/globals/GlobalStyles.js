@@ -30,9 +30,9 @@ const GlobalStyles = createGlobalStyle`
     a {
         color: inherit;
         text-decoration: inherit;
-        &:focus {
+        /* &:focus {
 	    outline: ${(p) => p.theme.black} solid;   
-        }
+        } */
     }
     p, ul {
         color: ${(props) => props.theme.textColor};
@@ -71,9 +71,9 @@ const GlobalStyles = createGlobalStyle`
 	    cursor: pointer;
         font-family: 'Ubuntu', sans-serif;
 
-        &:focus {
+        /* &:focus {
 	    outline: ${(p) => p.theme.black} solid;   
-        }
+        } */
     }
 
     label {
@@ -97,7 +97,6 @@ const GlobalStyles = createGlobalStyle`
         &:focus {
             border-bottom: 2px solid ${(p) => p.theme.primaryColor100}; 
             &:invalid {
-
             border-bottom: 2px solid #ff0080; 
             }
         }

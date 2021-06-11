@@ -1,11 +1,17 @@
 // Svg
 import { ReactComponent as ContactDecor } from "../img/contactDecor.svg";
+import { ReactComponent as EmailIcon } from "../img/EmailIcon.svg";
 // Animation
 import { motion } from "framer-motion";
 // Styles
 import styled from "styled-components";
 
 const ContactSection = () => {
+  const submitAnim = {
+    hover: { y: -4 },
+    tap: { y: 2 },
+  };
+
   return (
     <StyledContactSection>
       <h1 className="title-faint">...interested?</h1>
@@ -16,7 +22,7 @@ const ContactSection = () => {
           action="https://formsubmit.co/3d78e4b8b90cd7abe0848380f531de17 "
           method="POST"
         >
-          <div className="fullname">
+          <div className="input">
             <input
               type="text"
               name="FullName"
@@ -28,17 +34,17 @@ const ContactSection = () => {
             </label>
           </div>
 
-          <div className="email">
+          <div className="input">
             <input type="email" name="email" placeholder="Email" required />
             <label htmlFor="email">Email</label>
           </div>
 
-          <div className="subject">
+          <div className="input">
             <input type="text" name="subject" placeholder="Subject" />
             <label htmlFor="subject">Subject</label>
           </div>
 
-          <div className="message">
+          <div className="input message">
             <textarea
               name="message"
               id="message"
@@ -50,16 +56,41 @@ const ContactSection = () => {
             <label htmlFor="message">Message</label>
           </div>
 
-          <SubmitBtn type="submit">SEND MESSAGE</SubmitBtn>
+          <SubmitBtn
+            type="submit"
+            variants={submitAnim}
+            whileHover="hover"
+            whileTap="tap"
+          >
+            SEND MESSAGE
+          </SubmitBtn>
+          <ContactEmail>
+            <EmailIcon />
+            <p>jdanielsemine@gmail.com</p>
+          </ContactEmail>
         </Form>
       </ContactCard>
     </StyledContactSection>
   );
 };
 
+const ContactEmail = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  svg {
+    display: inline-block;
+  }
+`;
+
 const SubmitBtn = styled(motion.button)`
   grid-column: 3;
-  justify-self: center;
+  justify-self: end;
 
   padding: 1.5rem 2.5rem;
   color: #fff;
@@ -69,6 +100,7 @@ const SubmitBtn = styled(motion.button)`
 `;
 
 const Form = styled(motion.form)`
+  position: relative;
   display: grid;
 
   width: 100%;
@@ -76,7 +108,7 @@ const Form = styled(motion.form)`
   grid-template-rows: 6rem 23rem;
   align-items: end;
   column-gap: 3rem;
-  row-gap: 4rem;
+  row-gap: 2rem;
   z-index: 2;
 
   .message {
@@ -113,7 +145,7 @@ const Form = styled(motion.form)`
     visibility: hidden;
   }
 
-  > div {
+  .input {
     display: flex;
     flex-direction: column;
   }
@@ -152,7 +184,7 @@ const ContactCard = styled(motion.div)`
       background-color: ${(props) => props.theme.primaryColor100};
     }
   }
-  svg {
+  > svg {
     position: absolute;
     top: 0;
     left: 0;
