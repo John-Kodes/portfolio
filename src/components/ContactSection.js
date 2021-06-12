@@ -96,7 +96,7 @@ const SubmitBtn = styled(motion.button)`
   color: #fff;
   background-color: ${(p) => p.theme.primaryColor100};
   border-radius: 10rem;
-  box-shadow: 0 0.5rem 2rem ${(p) => p.theme.boxShadow300};
+  box-shadow: 0 0.5rem 2rem ${(p) => p.theme.boxShadow200};
 `;
 
 const Form = styled(motion.form)`
@@ -127,7 +127,7 @@ const Form = styled(motion.form)`
     display: block;
     width: 100%;
     border-radius: 7px;
-    box-shadow: 0 0.5rem 2rem ${(p) => p.theme.boxShadow100};
+    box-shadow: 0 0.5rem 1rem ${(p) => p.theme.boxShadow100};
     padding: 1rem 1.5rem;
     overflow: hidden;
     order: 1;
@@ -164,7 +164,7 @@ const ContactCard = styled(motion.div)`
   width: 100%;
   min-height: 50rem;
   padding: 5rem 10rem;
-  box-shadow: 0 2rem 4rem ${(props) => props.theme.boxShadow200};
+  box-shadow: 0 2rem 4rem ${(props) => props.theme.boxShadow100};
 
   overflow: hidden;
 

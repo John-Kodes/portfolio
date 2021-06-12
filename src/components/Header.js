@@ -184,18 +184,18 @@ const AboutBtn = styled(motion.button)`
   color: #fff;
   padding: 1rem 1.6rem;
   border-radius: 4px;
-  box-shadow: 0 0.6rem 2rem ${(props) => props.theme.boxShadow200};
+  box-shadow: 0 0.6rem 2rem ${(props) => props.theme.boxShadow100};
 
   transition: all 0.2s;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 1rem 2.8rem ${(props) => props.theme.boxShadow200};
+    box-shadow: 0 1rem 2.8rem ${(props) => props.theme.boxShadow100};
   }
 
   &:active {
     transform: translateY(2px);
-    box-shadow: 0 0.5rem 1.5rem ${(props) => props.theme.boxShadow200};
+    box-shadow: 0 0.5rem 1.5rem ${(props) => props.theme.boxShadow100};
   }
 `;
 

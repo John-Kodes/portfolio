@@ -2,6 +2,8 @@
 import polyBg from "../img/polyBg.svg";
 import { ReactComponent as GithubLogo } from "../img/github.svg";
 import { ReactComponent as Arrow } from "../img/ArrowBtn.svg";
+import { ReactComponent as CardAce } from "../img/CardAceLinear.svg";
+import { ReactComponent as CardJack } from "../img/CardJackLinear.svg";
 // Animation
 import { motion } from "framer-motion";
 import { letterAnim } from "../animations";
@@ -74,11 +76,19 @@ const ProjectsSection = () => {
             <motion.div whileHover={letterAnim}>a</motion.div>
             <motion.div whileHover={letterAnim}>x</motion.div>
           </h2>
+          <CardsContainer>
+            <CardJack />
+            <CardAce />
+          </CardsContainer>
         </CardContent>
       </ProjectCard>
     </StyledProjectsSection>
   );
 };
+
+const CardsContainer = styled(motion.div)`
+  position: absolute;
+`;
 
 const CardContent = styled(motion.div)`
   position: relative;
@@ -163,7 +173,7 @@ const CardDesc = styled(motion.div)`
     font-weight: 500;
     background-color: ${(props) => props.theme.primaryColor100};
     border-radius: 10rem 0 0 10rem;
-    box-shadow: 0 4px 2rem ${(props) => props.theme.boxShadow300};
+    box-shadow: 0 4px 2rem ${(props) => props.theme.boxShadow200};
 
     svg {
       display: block;
@@ -195,7 +205,7 @@ const ProjectCard = styled(motion.div)`
   background-color: #fff;
   width: 100%;
   border-radius: 3rem;
-  box-shadow: 0 2rem 4rem ${(props) => props.theme.boxShadow200};
+  box-shadow: 0 2rem 4rem ${(props) => props.theme.boxShadow100};
 
   overflow: hidden;
 `;

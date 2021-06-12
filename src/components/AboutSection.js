@@ -131,7 +131,7 @@ const TechSkillsContainer = styled(motion.div)`
     padding: 1.5rem 2.5rem;
     border-radius: 4px 4px 3.5rem 3.5rem;
     background-color: #fff;
-    box-shadow: 0 4px 2rem ${(props) => props.theme.boxShadow200};
+    box-shadow: 0 4px 2rem ${(props) => props.theme.boxShadow100};
 
     margin-bottom: 4rem;
   }
@@ -150,7 +150,7 @@ const TechSkillsContainer = styled(motion.div)`
       background-color: #e9f0f5;
       position: absolute;
       height: 11.3rem;
-      width: 100%;
+      width: 110%;
       bottom: -1.1rem;
       left: 50%;
       transform: translateX(-50%);
@@ -178,7 +178,7 @@ const TechSkillsContainer = styled(motion.div)`
       background-color: #e9f0f5;
       position: absolute;
       height: 9.3rem;
-      width: 100%;
+      width: 110%;
       bottom: -1.5rem;
       left: 50%;
       transform: translateX(-50%);
@@ -209,10 +209,14 @@ const TechSkillCard = styled(motion.div)`
 
   background-color: #fff;
   border-radius: 2rem;
-  box-shadow: 0 4px 2rem ${(props) => props.theme.boxShadow200};
+  box-shadow: 0 4px 2rem ${(props) => props.theme.boxShadow150};
 
+  transition: all 0.4s, transform 0.2s;
   overflow: hidden;
-  transition: all 0.4s;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
 
   svg {
     min-width: 10rem;
@@ -241,7 +245,7 @@ const SkillCard = styled(motion.div)`
   width: 30rem;
   height: 35rem;
 
-  border: 2px solid #e3f2f8;
+  border: 2px solid #f0f5f7;
   background-color: #fff;
   border-radius: 2rem;
   box-shadow: 0 1rem 2rem ${(props) => props.theme.boxShadow100};

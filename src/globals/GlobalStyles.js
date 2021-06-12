@@ -30,9 +30,7 @@ const GlobalStyles = createGlobalStyle`
     a {
         color: inherit;
         text-decoration: inherit;
-        /* &:focus {
-	    outline: ${(p) => p.theme.black} solid;   
-        } */
+
     }
     p, ul {
         color: ${(props) => props.theme.textColor};
@@ -84,7 +82,7 @@ const GlobalStyles = createGlobalStyle`
     input, textarea {
         background: none;
         border: none;
-        border-bottom: 2px solid #ddd; 
+        border-bottom: 2px solid #e0e0e0; 
         outline: inherit;
         resize: none;
         
