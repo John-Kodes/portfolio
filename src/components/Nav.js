@@ -1,3 +1,5 @@
+// Components
+import { scrollToHandler } from "./Handlers";
 // SVG
 import { ReactComponent as PenIcon } from "../img/penIcon.svg";
 import { ReactComponent as Logo } from "../img/JDS_logo.svg";
@@ -10,9 +12,13 @@ const Nav = () => {
   return (
     <StyledNav>
       <Logo className="logo" />
-      <NavLink>Get to know me</NavLink>
-      <NavLink>Stuff I've made</NavLink>
-      <ContactBtn>
+      <NavLink onClick={() => scrollToHandler("section-about")}>
+        Get to know me
+      </NavLink>
+      <NavLink onClick={() => scrollToHandler("section-projects")}>
+        Stuff I've made
+      </NavLink>
+      <ContactBtn onClick={() => scrollToHandler("section-contact")}>
         Let's talk
         <PenIcon className="PenSvg" />
       </ContactBtn>

@@ -22,7 +22,7 @@ const ProjectsSection = () => {
     },
   };
   return (
-    <StyledProjectsSection>
+    <StyledProjectsSection id="section-projects">
       <h1>Stuff I've made</h1>
       <ProjectCard>
         <CardDesc>
@@ -76,27 +76,20 @@ const ProjectsSection = () => {
             <motion.div whileHover={letterAnim}>a</motion.div>
             <motion.div whileHover={letterAnim}>x</motion.div>
           </h2>
-          <CardsContainer>
-            <CardJack />
-            <CardAce />
-          </CardsContainer>
         </CardContent>
       </ProjectCard>
     </StyledProjectsSection>
   );
 };
 
-const CardsContainer = styled(motion.div)`
-  position: absolute;
-`;
-
 const CardContent = styled(motion.div)`
   position: relative;
   flex: 0 0 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(185deg, rgba(0, 0, 0, 0.9), #11002ce5),
+  background-image: linear-gradient(185deg, rgba(0, 0, 0, 0.9), #0f091ae2),
     url(${polyBg});
   background-attachment: fixed;
   z-index: 2;
@@ -132,11 +125,12 @@ const CardContent = styled(motion.div)`
     }
   }
 
-  h2 {
+  > h2 {
     display: flex;
     font-size: 7rem;
     color: #fff;
     position: relative;
+
     &::after {
       content: "";
       position: absolute;

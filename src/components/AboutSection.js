@@ -15,7 +15,7 @@ import { ReactComponent as GitAndGithubIcon } from "../img/gitAndGithub.svg";
 
 const AboutSection = () => {
   return (
-    <StyledAboutSection>
+    <StyledAboutSection id="section-about">
       <AboutGrid>
         <AboutText>
           <h1>A bit about me</h1>

@@ -1,3 +1,5 @@
+// Components
+import { scrollToHandler } from "./Handlers";
 // SVG & Img
 import { ReactComponent as HeaderSvg } from "../img/HeaderSvg.svg";
 import { ReactComponent as CameraIcon } from "../img/CameraIcon.svg";
@@ -11,57 +13,56 @@ import styled from "styled-components";
 
 const Header = () => {
   return (
-    <>
-      <StyledHeader>
-        <Photo
-          src={photo}
-          alt="John Daniel Semine Photo. Credit: Joan Semine"
-        />
-        <CreditBox className="credit">
-          <CreditTab />
-          <Text>
-            <CameraIcon /> <p>: Joan Semine</p>
-          </Text>
-        </CreditBox>
+    <StyledHeader id="section-header">
+      <Photo src={photo} alt="John Daniel Semine Photo. Credit: Joan Semine" />
+      <CreditBox className="credit">
+        <CreditTab />
+        <Text>
+          <CameraIcon /> <p>: Joan Semine</p>
+        </Text>
+      </CreditBox>
 
-        <HeaderSvg className="svg" />
-        <Content>
-          <FirstName>
-            <motion.div whileHover={letterAnim}>J</motion.div>
-            <motion.div whileHover={letterAnim}>o</motion.div>
-            <motion.div whileHover={letterAnim}>h</motion.div>
-            <motion.div whileHover={letterAnim}>n</motion.div>&nbsp;
-            <motion.div whileHover={letterAnim}>D</motion.div>
-            <motion.div whileHover={letterAnim}>a</motion.div>
-            <motion.div whileHover={letterAnim}>n</motion.div>
-            <motion.div whileHover={letterAnim}>i</motion.div>
-            <motion.div whileHover={letterAnim}>e</motion.div>
-            <motion.div whileHover={letterAnim}>l</motion.div>
-          </FirstName>
-          <LastName>
-            <motion.div whileHover={letterAnim}>S</motion.div>
-            <motion.div whileHover={letterAnim}>e</motion.div>
-            <motion.div whileHover={letterAnim}>m</motion.div>
-            <motion.div whileHover={letterAnim}>i</motion.div>
-            <motion.div whileHover={letterAnim}>n</motion.div>
-            <motion.div whileHover={letterAnim}>e</motion.div>
-          </LastName>
-          <Desc>
-            <motion.div whileHover={letterAnim(-4)}>
-              Front-end Webdeveloper
-            </motion.div>
-            &nbsp; \ &nbsp;
-            <motion.div whileHover={letterAnim(-4)}>Designer</motion.div>&nbsp;
-            \ &nbsp;
-            <motion.div whileHover={letterAnim(-4)}>Creative</motion.div>
-          </Desc>
-          <BtnContainer>
-            <AboutBtn>About me</AboutBtn>
-            <ProjectsBtn>Checkout some of my projects!</ProjectsBtn>
-          </BtnContainer>
-        </Content>
-      </StyledHeader>
-    </>
+      <HeaderSvg className="svg" />
+      <Content>
+        <FirstName>
+          <motion.div whileHover={letterAnim}>J</motion.div>
+          <motion.div whileHover={letterAnim}>o</motion.div>
+          <motion.div whileHover={letterAnim}>h</motion.div>
+          <motion.div whileHover={letterAnim}>n</motion.div>&nbsp;
+          <motion.div whileHover={letterAnim}>D</motion.div>
+          <motion.div whileHover={letterAnim}>a</motion.div>
+          <motion.div whileHover={letterAnim}>n</motion.div>
+          <motion.div whileHover={letterAnim}>i</motion.div>
+          <motion.div whileHover={letterAnim}>e</motion.div>
+          <motion.div whileHover={letterAnim}>l</motion.div>
+        </FirstName>
+        <LastName>
+          <motion.div whileHover={letterAnim}>S</motion.div>
+          <motion.div whileHover={letterAnim}>e</motion.div>
+          <motion.div whileHover={letterAnim}>m</motion.div>
+          <motion.div whileHover={letterAnim}>i</motion.div>
+          <motion.div whileHover={letterAnim}>n</motion.div>
+          <motion.div whileHover={letterAnim}>e</motion.div>
+        </LastName>
+        <Desc>
+          <motion.div whileHover={letterAnim(-4)}>
+            Front-end Webdeveloper
+          </motion.div>
+          &nbsp; \ &nbsp;
+          <motion.div whileHover={letterAnim(-4)}>Designer</motion.div>&nbsp; \
+          &nbsp;
+          <motion.div whileHover={letterAnim(-4)}>Creative</motion.div>
+        </Desc>
+        <BtnContainer>
+          <AboutBtn onClick={() => scrollToHandler("section-about")}>
+            About me
+          </AboutBtn>
+          <ProjectsBtn onClick={() => scrollToHandler("section-projects")}>
+            Checkout some of my projects!
+          </ProjectsBtn>
+        </BtnContainer>
+      </Content>
+    </StyledHeader>
   );
 };
 

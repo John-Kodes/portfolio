@@ -13,7 +13,7 @@ const ContactSection = () => {
   };
 
   return (
-    <StyledContactSection>
+    <StyledContactSection id="section-contact">
       <h1 className="title-faint">...interested?</h1>
       <ContactCard>
         <ContactDecor />
@@ -200,6 +200,7 @@ const StyledContactSection = styled(motion.div)`
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  padding-top: 2rem;
 
   .title-faint {
     font-size: 2.4rem;
