@@ -2,8 +2,6 @@
 import polyBg from "../img/polyBg.svg";
 import { ReactComponent as GithubLogo } from "../img/github.svg";
 import { ReactComponent as Arrow } from "../img/ArrowBtn.svg";
-import { ReactComponent as CardAce } from "../img/CardAceLinear.svg";
-import { ReactComponent as CardJack } from "../img/CardJackLinear.svg";
 // Animation
 import { motion } from "framer-motion";
 import { letterAnim } from "../animations";

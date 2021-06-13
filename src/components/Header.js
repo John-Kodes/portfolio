@@ -147,6 +147,10 @@ const Photo = styled(motion.img)`
   right: -10rem;
   z-index: 2;
 
+  @media only screen and (max-width: 64em) {
+    right: -20rem;
+  }
+
   &:hover ~ .credit {
     transform: translateY(-4.5rem);
   }

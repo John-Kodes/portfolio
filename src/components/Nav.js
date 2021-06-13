@@ -11,7 +11,7 @@ import styled from "styled-components";
 const Nav = () => {
   return (
     <StyledNav>
-      <Logo className="logo" />
+      <Logo className="logo" onClick={() => window.location.reload()} />
       <NavLink onClick={() => scrollToHandler("section-about")}>
         Get to know me
       </NavLink>
@@ -27,6 +27,7 @@ const Nav = () => {
 };
 
 const StyledNav = styled(motion.nav)`
+  position: relative;
   grid-column: main-content-start / main-content-end;
   grid-row: 1/2;
 
@@ -40,8 +41,36 @@ const StyledNav = styled(motion.nav)`
   position: relative;
   z-index: 3;
 
+  @media only screen and (max-width: 44em) {
+    justify-content: space-between;
+    gap: 0;
+
+    @media only screen and (max-width: 34em) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 110vw;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+  }
+
   .logo {
     margin-right: auto;
+    cursor: pointer;
+
+    @media only screen and (max-width: 44em) {
+      margin-right: 0px;
+    }
+    @media only screen and (max-width: 34em) {
+      display: none;
+      visibility: hidden;
+    }
   }
 `;
 

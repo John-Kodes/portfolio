@@ -16,5 +16,4 @@ export const scrollToHandler = (id) => {
   const y =
     element.getBoundingClientRect().top + window.pageYOffset + yOffset(id);
   window.scrollTo({ top: y, behavior: "smooth" });
-  console.log(yOffset(id), id);
 };
