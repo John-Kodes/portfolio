@@ -78,6 +78,7 @@ const NavLink = styled(motion.button)`
   font-weight: 500;
   font-size: 1.4rem;
   color: #148e97;
+  padding: 1rem 1rem;
 
   transition: all 0.2s;
 
