@@ -5,6 +5,7 @@ import { ReactComponent as HeaderSvg } from "../img/HeaderSvg.svg";
 import { ReactComponent as CameraIcon } from "../img/CameraIcon.svg";
 import { ReactComponent as CreditTab } from "../img/CreditTab.svg";
 import photo from "../img/PHOTOFINALcomp720.png";
+import roundPhoto from "../img/PortFolioPhotoRound.png";
 // Animation
 import { motion } from "framer-motion";
 import { letterAnim } from "../animations";
@@ -14,7 +15,6 @@ import styled from "styled-components";
 const Header = () => {
   return (
     <StyledHeader id="section-header">
-      <Photo src={photo} alt="John Daniel Semine Photo. Credit: Joan Semine" />
       <CreditBox className="credit">
         <CreditTab />
         <Text>
@@ -62,9 +62,82 @@ const Header = () => {
           </ProjectsBtn>
         </BtnContainer>
       </Content>
+      <PhotoContainer>
+        <Photo
+          src={photo}
+          alt="John Daniel Semine Photo. Credit: Joan Semine"
+        />
+        <div className="round-image-container">
+          <img
+            src={roundPhoto}
+            alt="John Daniel Semine Photo Round"
+            className="round-photo"
+          />
+        </div>
+      </PhotoContainer>
     </StyledHeader>
   );
 };
+
+const PhotoContainer = styled.div`
+  .round-image-container {
+    position: relative;
+    display: none;
+    visibility: hidden;
+
+    @media only screen and (max-width: 44em) {
+      display: block;
+      visibility: visible;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      height: 22rem;
+      width: 22rem;
+      z-index: 9999;
+      border-radius: 50%;
+      border: 4px solid ${(p) => p.theme.pageBg100};
+    }
+  }
+  .round-photo {
+    display: block;
+    height: 20rem;
+    width: 20rem;
+    object-fit: fill;
+    background-color: ${(p) => p.theme.pageBg100};
+    border-radius: 50%;
+    margin-bottom: 2rem;
+  }
+`;
+
+const Photo = styled(motion.img)`
+  position: absolute;
+
+  height: 95rem;
+  bottom: -20rem;
+  right: -10rem;
+  z-index: 2;
+
+  @media only screen and (max-width: 70em) {
+    right: -20rem;
+  }
+  @media only screen and (max-width: 62em) {
+    right: -30rem;
+  }
+
+  @media only screen and (max-width: 44em) {
+    display: none;
+    visibility: hidden;
+  }
+
+  &:hover ~ .credit {
+    transform: translateY(-4.5rem);
+  }
+`;
 
 const Text = styled.div`
   grid-row: 1;
@@ -96,6 +169,10 @@ const CreditBox = styled(motion.div)`
   z-index: 3;
 
   transition: transform 0.2s ease-in-out 2s;
+
+  @media only screen and (max-width: 31.25em) {
+    bottom: -7.7rem;
+  }
 
   svg {
     display: block;
@@ -132,27 +209,16 @@ const StyledHeader = styled(motion.div)`
   grid-column: col-start 2 / col-end 7;
   grid-row: 1/3;
 
+  @media only screen and (max-width: 44em) {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
   .svg {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
+    top: -30rem;
     right: -75rem;
-  }
-`;
-
-const Photo = styled(motion.img)`
-  position: absolute;
-
-  height: 95rem;
-  bottom: -20rem;
-  right: -10rem;
-  z-index: 2;
-
-  @media only screen and (max-width: 64em) {
-    right: -20rem;
-  }
-
-  &:hover ~ .credit {
-    transform: translateY(-4.5rem);
   }
 `;
 
