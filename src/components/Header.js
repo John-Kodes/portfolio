@@ -147,7 +147,7 @@ const Text = styled.div`
   grid-column: 1;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem;
   p {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -211,6 +211,7 @@ const StyledHeader = styled(motion.div)`
 
   grid-column: col-start 2 / col-end 7;
   grid-row: 1/3;
+  row-gap: 2rem;
 
   @media only screen and (max-width: 44em) {
     flex-direction: column-reverse;
@@ -234,6 +235,10 @@ const Content = styled.div`
   font-weight: 400;
   color: ${(props) => props.theme.primaryColor200};
   z-index: 2;
+
+  @media only screen and (max-width: 44em) {
+    color: #009b9b;
+  }
 `;
 
 const FirstName = styled(motion.div)`
@@ -261,6 +266,10 @@ const AboutBtn = styled(motion.button)`
   box-shadow: 0 0.6rem 2rem ${(props) => props.theme.boxShadow100};
 
   transition: all 0.2s;
+
+  @media only screen and (max-width: 44em) {
+    background-color: #009b9b;
+  }
 
   &:hover {
     transform: translateY(-4px);

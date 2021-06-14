@@ -169,7 +169,7 @@ const TechSkillsContainer = styled(motion.div)`
     /* height: 25rem; */
     p::after {
       content: "";
-      background-color: #284b49;
+      background-color: #009b9b;
       position: absolute;
       height: 11.3rem;
       width: 110%;
@@ -197,7 +197,7 @@ const TechSkillsContainer = styled(motion.div)`
 
     p::after {
       content: "";
-      background-color: #284b49;
+      background-color: #009b9b;
       position: absolute;
       height: 9.5rem;
       width: 110%;
@@ -211,7 +211,7 @@ const TechSkillsContainer = styled(motion.div)`
   .css__icon {
     p::after {
       content: "";
-      background-color: #284b49;
+      background-color: #009b9b;
       position: absolute;
       height: 11.3rem;
       width: 110%;
@@ -239,7 +239,7 @@ const TechSkillsContainer = styled(motion.div)`
 
     p::after {
       content: "";
-      background-color: #284b49;
+      background-color: #009b9b;
       position: absolute;
       height: 5rem;
       width: 110%;
