@@ -169,7 +169,7 @@ const TechSkillsContainer = styled(motion.div)`
     /* height: 25rem; */
     p::after {
       content: "";
-      background-color: #e9f0f5;
+      background-color: #284b49;
       position: absolute;
       height: 11.3rem;
       width: 110%;
@@ -197,7 +197,7 @@ const TechSkillsContainer = styled(motion.div)`
 
     p::after {
       content: "";
-      background-color: #e9f0f5;
+      background-color: #284b49;
       position: absolute;
       height: 9.5rem;
       width: 110%;
@@ -211,7 +211,7 @@ const TechSkillsContainer = styled(motion.div)`
   .css__icon {
     p::after {
       content: "";
-      background-color: #e9f0f5;
+      background-color: #284b49;
       position: absolute;
       height: 11.3rem;
       width: 110%;
@@ -239,7 +239,7 @@ const TechSkillsContainer = styled(motion.div)`
 
     p::after {
       content: "";
-      background-color: #e9f0f5;
+      background-color: #284b49;
       position: absolute;
       height: 5rem;
       width: 110%;
@@ -291,7 +291,7 @@ const TechSkillCard = styled(motion.div)`
   p {
     width: 100%;
     position: relative;
-    color: #656d86;
+    color: #fff;
     font-size: 1.6rem;
     z-index: 2;
     text-align: center;

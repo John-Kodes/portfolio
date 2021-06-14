@@ -106,14 +106,18 @@ const CardContent = styled(motion.div)`
     top: 2rem;
     right: 2rem;
 
-    border: 3px solid #fff;
+    border: 0.3rem solid #fff;
     border-radius: 100rem;
     padding: 0.5rem 0.5rem 0.5rem 1.2rem;
     width: 4.8rem;
 
     overflow: hidden;
     @media only screen and (max-width: 31.25em) {
-      padding: 0rem 0.4rem 0rem 1.2rem;
+      border: 0.3rem solid #fff;
+      padding: 0rem 0.5rem 0rem 1.2rem;
+    }
+    @media (hover: none) {
+      width: 14rem;
     }
     svg {
       display: block;
