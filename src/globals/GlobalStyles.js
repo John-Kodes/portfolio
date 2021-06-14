@@ -43,7 +43,11 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         font-size: 4.8rem;
-        color: ${(props) => props.theme.primaryColor200}
+        color: ${(props) => props.theme.primaryColor200};
+
+        @media only screen and (max-width: 23em) {
+            font-size: 4.2rem;
+        }
     }
     h2{
         font-family: 'Montserrat', sans-serif;

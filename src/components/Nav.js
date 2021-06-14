@@ -109,6 +109,10 @@ const ContactBtn = styled(motion.button)`
 
   transition: all 0.2s;
 
+  @media only screen and (max-width: 83.5em) {
+    margin-right: 1rem;
+  }
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 1.5rem 2.5rem ${(props) => props.theme.boxShadow200};

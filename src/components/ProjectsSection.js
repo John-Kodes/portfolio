@@ -92,6 +92,10 @@ const CardContent = styled(motion.div)`
   background-attachment: fixed;
   z-index: 2;
 
+  @media only screen and (max-width: 55em) {
+    flex: 0 0 50rem;
+  }
+
   a {
     display: flex;
     flex-direction: row-reverse;
@@ -104,11 +108,13 @@ const CardContent = styled(motion.div)`
 
     border: 3px solid #fff;
     border-radius: 100rem;
-    padding: 5px 5px 5px 12px;
+    padding: 0.5rem 0.5rem 0.5rem 1.2rem;
     width: 4.8rem;
 
     overflow: hidden;
-
+    @media only screen and (max-width: 31.25em) {
+      padding: 0rem 0.4rem 0rem 1.2rem;
+    }
     svg {
       display: block;
       max-width: 3.2rem;
@@ -129,6 +135,9 @@ const CardContent = styled(motion.div)`
     color: #fff;
     position: relative;
 
+    @media only screen and (max-width: 23em) {
+      font-size: 6rem;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -151,6 +160,18 @@ const CardDesc = styled(motion.div)`
   gap: 2.5rem;
   padding: 3rem 6rem;
 
+  @media only screen and (max-width: 55em) {
+    padding: 6rem 20%;
+  }
+
+  @media only screen and (max-width: 34em) {
+    padding: 6rem 10%;
+  }
+
+  @media only screen and (max-width: 23em) {
+    padding: 6rem 10% 10rem;
+  }
+
   a {
     position: absolute;
     right: 0;
@@ -167,6 +188,11 @@ const CardDesc = styled(motion.div)`
     border-radius: 10rem 0 0 10rem;
     box-shadow: 0 4px 2rem ${(props) => props.theme.boxShadow200};
 
+    @media only screen and (max-width: 55em) {
+      right: 3rem;
+      font-size: 1.8rem;
+      border-radius: 10rem;
+    }
     svg {
       display: block;
       height: 2rem;
@@ -184,6 +210,11 @@ const CardDesc = styled(motion.div)`
   p,
   ul {
     font-size: 1.6rem;
+
+    @media only screen and (max-width: 55em) {
+      font-size: 1.8rem;
+      max-width: 45ch;
+    }
   }
 
   ul {
@@ -200,6 +231,10 @@ const ProjectCard = styled(motion.div)`
   box-shadow: 0 2rem 4rem ${(props) => props.theme.boxShadow100};
 
   overflow: hidden;
+
+  @media only screen and (max-width: 55em) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const StyledProjectsSection = styled(motion.div)`
@@ -211,6 +246,11 @@ const StyledProjectsSection = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   gap: 8rem;
+
+  @media only screen and (max-width: 64em) {
+    grid-column: col-start 1 / col-end 8;
+    padding: 8rem 2rem;
+  }
 `;
 
 export default ProjectsSection;
