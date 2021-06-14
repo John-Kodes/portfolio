@@ -4,6 +4,7 @@ const GlobalTheme = {
   black: "#3b4041",
   primaryColor100: "#17dbb7",
   primaryColor200: "#00BABA",
+  primaryColor300: "#007888",
   boxShadow100: "rgba(48, 92, 143, 0.1)",
   boxShadow150: "rgba(48, 92, 143, 0.15)",
   boxShadow200: "rgba(48, 92, 143, 0.2)",

@@ -237,7 +237,7 @@ const Content = styled.div`
   z-index: 2;
 
   @media only screen and (max-width: 44em) {
-    color: #009b9b;
+    color: ${(props) => props.theme.primaryColor300};
   }
 `;
 
@@ -268,7 +268,7 @@ const AboutBtn = styled(motion.button)`
   transition: all 0.2s;
 
   @media only screen and (max-width: 44em) {
-    background-color: #009b9b;
+    background-color: ${(props) => props.theme.primaryColor300};
   }
 
   &:hover {
