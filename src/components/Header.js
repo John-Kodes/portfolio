@@ -96,17 +96,17 @@ const PhotoContainer = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
 
-      height: 22rem;
-      width: 22rem;
+      height: 29rem;
+      width: 29rem;
       z-index: 9999;
       border-radius: 50%;
-      border: 4px solid ${(p) => p.theme.pageBg100};
+      border: 2px solid ${(p) => p.theme.pageBg100};
     }
   }
   .round-photo {
     display: block;
-    height: 20rem;
-    width: 20rem;
+    height: 27rem;
+    width: 27rem;
     object-fit: fill;
     background-color: ${(p) => p.theme.pageBg100};
     border-radius: 50%;
