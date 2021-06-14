@@ -16,7 +16,7 @@ function App() {
   return (
     <ThemeProvider theme={GlobalTheme}>
       <GlobalStyles />
-      <PageLayout id="main">
+      <PageLayout>
         <Nav />
         <Header />
         <AboutSection />
@@ -43,7 +43,7 @@ const PageLayout = styled(motion.div)`
   grid-template-rows: 6.6rem 80vh 136.7rem minmax(50rem, max-content);
 
   @media only screen and (min-height: 50em) {
-    grid-template-rows: 6.6rem 64rem 136.7rem minmax(50rem, max-content);
+    grid-template-rows: 6.6rem 64rem min-content minmax(50rem, max-content);
   }
 
   align-items: center;

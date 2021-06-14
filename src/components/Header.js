@@ -128,6 +128,9 @@ const Photo = styled(motion.img)`
   @media only screen and (max-width: 62em) {
     right: -30rem;
   }
+  @media only screen and (max-width: 51em) {
+    right: -40rem;
+  }
 
   @media only screen and (max-width: 44em) {
     display: none;

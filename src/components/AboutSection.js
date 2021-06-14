@@ -31,7 +31,7 @@ const AboutSection = () => {
 
         <SkillCardContainer>
           <SkillCard className="first">
-            <DevIcon />
+            <DevIcon className="dev-icon" />
             <h2>Developer</h2>
             <p>
               Create custom websites from scratch. I really enjoy the problem
@@ -39,7 +39,7 @@ const AboutSection = () => {
             </p>
           </SkillCard>
           <SkillCard className="second">
-            <DesignIcon />
+            <DesignIcon className="design-icon" />
             <h2>Design</h2>
             <p>
               Create beautiful websites with a sleek design while still keeping
@@ -52,46 +52,68 @@ const AboutSection = () => {
           <DotBg className="tech-skills_background" />
           <h3>Technological Skills</h3>
 
-          <TechSkillCard style={{ gridColumn: 2 }} className="react__icon">
-            <ReactIcon />
-            <h4>React</h4>
-            <p>
-              Redux
-              <br />
-              Router
-              <br />
-              Framer-motion
-              <br />
-              Axios
-            </p>
-          </TechSkillCard>
+          <TechSkillBox>
+            <TSCardContainer>
+              <TechSkillCard style={{ gridColumn: 2 }} className="react__icon">
+                <ReactIcon />
+                <h4>React</h4>
+                <p>
+                  Redux
+                  <br />
+                  Router
+                  <br />
+                  Framer-motion
+                  <br />
+                  Axios
+                </p>
+              </TechSkillCard>
+            </TSCardContainer>
 
-          <TechSkillCard className="javascript__icon">
-            <JavascriptIcon />
-            <h4>JavaScript</h4>
-          </TechSkillCard>
+            <TSCardContainer>
+              <TechSkillCard className="javascript__icon">
+                <JavascriptIcon />
+                <h4>JavaScript</h4>
+                <p>
+                  ES6+
+                  <br />
+                  Aync Await
+                  <br />
+                  JS Promise
+                </p>
+              </TechSkillCard>
+            </TSCardContainer>
 
-          <TechSkillCard className="css__icon">
-            <ScssAndCssIcon />
-            <h4>SCSS / CSS3</h4>
-            <p>
-              CSS Grid
-              <br />
-              FlexBox
-              <br />
-              Responsive
-            </p>
-          </TechSkillCard>
+            <TSCardContainer>
+              <TechSkillCard className="css__icon">
+                <ScssAndCssIcon />
+                <h4>SCSS / CSS3</h4>
+                <p>
+                  CSS Grid
+                  <br />
+                  FlexBox
+                  <br />
+                  Responsive
+                  <br />
+                  BEM
+                </p>
+              </TechSkillCard>
+            </TSCardContainer>
 
-          <TechSkillCard className="html__icon">
-            <HtmlIcon />
-            <h4>HTML5</h4>
-          </TechSkillCard>
+            <TSCardContainer>
+              <TechSkillCard className="html__icon">
+                <HtmlIcon />
+                <h4>HTML5</h4>
+                <p>Forms</p>
+              </TechSkillCard>
+            </TSCardContainer>
 
-          <TechSkillCard className="git__icon">
-            <GitAndGithubIcon />
-            <h4>GitHub / Git</h4>
-          </TechSkillCard>
+            <TSCardContainer>
+              <TechSkillCard className="git__icon">
+                <GitAndGithubIcon />
+                <h4>GitHub / Git</h4>
+              </TechSkillCard>
+            </TSCardContainer>
+          </TechSkillBox>
           <Caption>
             I spend most of my time learning new skills and technologies to use,
             to make your websites better.
@@ -101,33 +123,31 @@ const AboutSection = () => {
     </StyledAboutSection>
   );
 };
+
 const Caption = styled(motion.p)`
   grid-column: 1/-1;
   margin-top: 3rem;
-  width: 50ch;
+  max-width: 50ch;
+  width: 100%;
   text-align: center;
 `;
 
+const TSCardContainer = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  width: 14rem;
+  height: 30rem;
+`;
+
 const TechSkillsContainer = styled(motion.div)`
+  position: relative;
   grid-column: 1/-1;
 
-  display: grid;
-  grid-template-columns:
-    [margin-left-start] minmax(1rem, 6rem) [margin-left-end] repeat(
-      5,
-      [col-start] 14rem [col-end]
-    )
-    [margin-right-start] minmax(1rem, 6rem) [margin-left-end];
-
-  grid-template-rows: min-content 25rem;
-
-  gap: 2rem;
-  justify-content: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h3 {
-    grid-row: 1;
-    grid-column: 1/-1;
     padding: 1.5rem 2.5rem;
     border-radius: 4px 4px 3.5rem 3.5rem;
     background-color: #fff;
@@ -137,13 +157,15 @@ const TechSkillsContainer = styled(motion.div)`
   }
 
   .tech-skills_background {
-    grid-area: 1/1 / -1/-1;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+
+    width: 100%;
   }
 
   .react__icon {
-    grid-column: 2;
-
     /* height: 25rem; */
     p::after {
       content: "";
@@ -160,16 +182,16 @@ const TechSkillsContainer = styled(motion.div)`
     &:hover {
       height: 29rem;
     }
+    @media (hover: none) {
+      height: 29rem;
+    }
   }
 
   .javascript__icon {
-    grid-column: 3;
-  }
-
-  .css__icon {
-    grid-column: 4;
-
     &:hover {
+      height: 26rem;
+    }
+    @media (hover: none) {
       height: 26rem;
     }
 
@@ -177,7 +199,7 @@ const TechSkillsContainer = styled(motion.div)`
       content: "";
       background-color: #e9f0f5;
       position: absolute;
-      height: 9.3rem;
+      height: 9.5rem;
       width: 110%;
       bottom: -1.5rem;
       left: 50%;
@@ -186,13 +208,55 @@ const TechSkillsContainer = styled(motion.div)`
     }
   }
 
-  .html__icon {
-    grid-column: 5;
+  .css__icon {
+    p::after {
+      content: "";
+      background-color: #e9f0f5;
+      position: absolute;
+      height: 11.3rem;
+      width: 110%;
+      bottom: -1.1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    &:hover {
+      height: 29rem;
+    }
+    @media (hover: none) {
+      height: 29rem;
+    }
   }
 
-  .git__icon {
-    grid-column: 6;
+  .html__icon {
+    &:hover {
+      height: 22rem;
+    }
+    @media (hover: none) {
+      height: 22rem;
+    }
+
+    p::after {
+      content: "";
+      background-color: #e9f0f5;
+      position: absolute;
+      height: 5rem;
+      width: 110%;
+      bottom: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
   }
+`;
+
+const TechSkillBox = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
 `;
 
 const TechSkillCard = styled(motion.div)`
@@ -200,7 +264,6 @@ const TechSkillCard = styled(motion.div)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  grid-row: 2;
 
   height: 17rem;
   width: 100%;
@@ -244,14 +307,39 @@ const SkillCard = styled(motion.div)`
 
   width: 30rem;
   height: 35rem;
+  padding: 0 2rem;
 
   border: 2px solid #f0f5f7;
   background-color: #fff;
   border-radius: 2rem;
   box-shadow: 0 1rem 2rem ${(props) => props.theme.boxShadow100};
 
-  svg {
-    /* fill: orange; */
+  @media only screen and (max-width: 44em) {
+    width: 25.71rem;
+    height: 30rem;
+  }
+
+  @media only screen and (max-width: 34em) {
+    width: 21.43rem;
+    height: 34rem;
+  }
+
+  @media only screen and (max-width: 27em) {
+    width: 29rem;
+  }
+
+  .dev-icon {
+    min-height: 5.6rem;
+    min-width: 6.9rem;
+    max-height: 5.6rem;
+    max-width: 6.9rem;
+  }
+
+  .design-icon {
+    min-height: 6.5rem;
+    min-width: 15.6rem;
+    max-height: 6.5rem;
+    max-width: 15.6rem;
   }
 
   h2 {
@@ -275,7 +363,8 @@ const SkillCard = styled(motion.div)`
   p {
     color: #7c98a8;
     font-size: 1.4rem;
-    width: 18rem;
+    width: 100%;
+    max-width: 18rem;
     text-align: center;
   }
 `;
@@ -283,6 +372,26 @@ const SkillCard = styled(motion.div)`
 const SkillCardContainer = styled(motion.div)`
   position: relative;
   height: 62rem;
+  width: 100%;
+
+  @media only screen and (max-width: 78em) {
+    height: 65rem;
+  }
+
+  @media only screen and (max-width: 55em) {
+    grid-column: 1/-1;
+    grid-row: 2;
+
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    height: auto;
+  }
+
+  @media only screen and (max-width: 27em) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .first {
     position: absolute;
@@ -290,6 +399,10 @@ const SkillCardContainer = styled(motion.div)`
     left: 0;
 
     transition: all 0.3s;
+
+    @media only screen and (max-width: 55em) {
+      position: relative;
+    }
 
     &:hover {
       transform: translate(-18px, -5px) rotate(-2deg);
@@ -306,6 +419,9 @@ const SkillCardContainer = styled(motion.div)`
     &:hover {
       transform: translate(15px, -2px) rotate(3deg);
     }
+    @media only screen and (max-width: 55em) {
+      position: relative;
+    }
   }
 `;
 
@@ -313,26 +429,59 @@ const AboutText = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 5rem;
+
+  @media only screen and (max-width: 55em) {
+    grid-column: 1/-1;
+    grid-row: 1;
+
+    width: 100%;
+    max-width: 50ch;
+    text-align: center;
+  }
 `;
 
 const AboutGrid = styled(motion.div)`
   display: grid;
-  grid-template-columns: minmax(min-content, 36rem) minmax(min-content, 50.9rem);
+  grid-template-columns: minmax(min-content, 12fr) minmax(min-content, 17fr);
   justify-content: center;
   align-content: center;
   align-items: center;
+  justify-items: center;
 
   height: 100%;
   gap: 6rem;
 `;
 
 const StyledAboutSection = styled(motion.div)`
-  grid-column: 1/-1;
+  position: relative;
+  grid-column: col-start 2 / col-end 7;
   grid-row: 3/4;
 
   height: 100%;
-  background-color: #fff;
+  padding: 10rem 0;
   z-index: 3;
+
+  @media only screen and (max-width: 64em) {
+    grid-column: col-start 1 / col-end 8;
+    padding: 10rem 4rem;
+  }
+
+  @media only screen and (max-width: 44em) {
+    padding: 10rem 2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 100%;
+    width: 100vw;
+    background-color: #fff;
+    z-index: -2;
+  }
 `;
 
 export default AboutSection;
