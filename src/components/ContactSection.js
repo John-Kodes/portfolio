@@ -64,11 +64,11 @@ const ContactSection = () => {
           >
             SEND MESSAGE
           </SubmitBtn>
-          <ContactEmail>
-            <EmailIcon />
-            <p>jdanielsemine@gmail.com</p>
-          </ContactEmail>
         </Form>
+        <ContactEmail>
+          <EmailIcon />
+          <p>jdanielsemine@gmail.com</p>
+        </ContactEmail>
       </ContactCard>
     </StyledContactSection>
   );
@@ -76,8 +76,8 @@ const ContactSection = () => {
 
 const ContactEmail = styled.div`
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 4rem;
+  left: 4rem;
 
   display: flex;
   align-items: center;
@@ -89,7 +89,7 @@ const ContactEmail = styled.div`
 `;
 
 const SubmitBtn = styled(motion.button)`
-  grid-column: 3;
+  grid-column: 1/-1;
   justify-self: end;
 
   padding: 1.5rem 2.5rem;
@@ -97,6 +97,8 @@ const SubmitBtn = styled(motion.button)`
   background-color: ${(p) => p.theme.primaryColor100};
   border-radius: 10rem;
   box-shadow: 0 0.5rem 2rem ${(p) => p.theme.boxShadow200};
+
+  margin-top: 2rem;
 `;
 
 const Form = styled(motion.form)`
@@ -110,6 +112,11 @@ const Form = styled(motion.form)`
   column-gap: 3rem;
   row-gap: 2rem;
   z-index: 2;
+
+  @media only screen and (max-width: 44em) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 6rem) 23rem;
+  }
 
   .message {
     grid-column: 1/-1;
@@ -168,6 +175,18 @@ const ContactCard = styled(motion.div)`
 
   overflow: hidden;
 
+  @media only screen and (max-width: 51em) {
+    padding: 5rem;
+  }
+
+  @media only screen and (max-width: 44em) {
+    padding: 14rem 5rem 10rem;
+  }
+
+  @media only screen and (max-width: 27em) {
+    padding: 14rem 2rem 10rem;
+  }
+
   h1 {
     position: relative;
     color: ${(props) => props.theme.black};
@@ -188,6 +207,12 @@ const ContactCard = styled(motion.div)`
     position: absolute;
     top: 0;
     left: 0;
+
+    @media only screen and (max-width: 44em) {
+      //260 182
+      width: 30rem;
+      height: 21rem;
+    }
   }
 `;
 
@@ -201,6 +226,11 @@ const StyledContactSection = styled(motion.div)`
   align-items: center;
   gap: 3rem;
   padding-top: 2rem;
+
+  @media only screen and (max-width: 64em) {
+    grid-column: col-start 1 / col-end 8;
+    padding: 8rem 2rem;
+  }
 
   .title-faint {
     font-size: 2.4rem;
