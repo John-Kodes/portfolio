@@ -18,13 +18,6 @@ const Header = () => {
 
   return (
     <StyledHeader id="section-header">
-      <CreditBox className="credit">
-        <CreditTab />
-        <Text>
-          <CameraIcon /> <p>: Joan Semine</p>
-        </Text>
-      </CreditBox>
-
       <HeaderSvg className="svg" />
       <Content>
         <FirstName>
@@ -67,7 +60,7 @@ const Header = () => {
       </Content>
       <PhotoContainer>
         <Photo
-          className={isLoaded ? "" : "hidden"}
+          className={isLoaded ? "photo" : "photo hidden"}
           onLoad={() => setIsLoaded(true)}
           src={photo}
           alt="John Daniel Semine Photo. Credit: Joan Semine"
@@ -86,6 +79,12 @@ const Header = () => {
           />
         </div>
       </PhotoContainer>
+      <CreditBox className="credit">
+        <CreditTab />
+        <Text>
+          <CameraIcon /> <p>: Joan Semine</p>
+        </Text>
+      </CreditBox>
     </StyledHeader>
   );
 };
@@ -133,6 +132,10 @@ const PhotoContainer = styled.div`
     border-radius: 50%;
     margin-bottom: 2rem;
   }
+
+  &:hover ~ .credit {
+    transform: translateY(-4.5rem);
+  }
 `;
 
 const Photo = styled(motion.img)`
@@ -158,10 +161,6 @@ const Photo = styled(motion.img)`
   @media only screen and (max-width: 44em) {
     display: none;
     visibility: hidden;
-  }
-
-  &:hover ~ .credit {
-    transform: translateY(-4.5rem);
   }
 `;
 
