@@ -18,10 +18,48 @@ const AboutSection = () => {
   const [element, controls] = ScrollInHook();
 
   const [bioEl, bioCtrl] = ScrollInHook(0.7);
+  const [techSkillsEl, techSkillsCtrl] = ScrollInHook(0.5);
 
   const bioAnim = {
-    show: { x: 0, opacity: 1, transition: { delay: 0.3, duration: 1 } },
-    hidden: { x: -50, opacity: 0, transition: { delay: 0.3, duration: 1 } },
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 1, ease: "easeOut" },
+    },
+    hidden: {
+      x: -50,
+      opacity: 0,
+      transition: { duration: 1, ease: "easeIn" },
+    },
+  };
+
+  const techSkillsContainerAnim = {
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.1,
+        staggerChildren: 0.1,
+        when: "beforeChildren",
+      },
+    },
+    hidden: { opacity: 0 },
+  };
+
+  const techSkillCardAnim = {
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    hidden: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
   };
 
   return (
@@ -45,7 +83,11 @@ const AboutSection = () => {
           </p>
         </Bio>
 
-        <SkillCardContainer>
+        <SkillCardContainer
+          variants={techSkillsContainerAnim}
+          initial="hidden"
+          animate="show"
+        >
           <SkillCard className="first">
             <DevIcon className="dev-icon" />
             <h2>Developer</h2>
@@ -68,9 +110,14 @@ const AboutSection = () => {
           <DotBg className="tech-skills_background" />
           <h3>Technological Skills</h3>
 
-          <TechSkillBox>
-            <TSCardContainer>
-              <TechSkillCard style={{ gridColumn: 2 }} className="react__icon">
+          <TechSkillBox
+            variants={techSkillsContainerAnim}
+            animate={techSkillsCtrl}
+            initial="hidden"
+            ref={techSkillsEl}
+          >
+            <TSCardContainer variants={techSkillCardAnim}>
+              <TechSkillCard className="react__icon">
                 <ReactIcon />
                 <h4>React</h4>
                 <p>
@@ -85,7 +132,7 @@ const AboutSection = () => {
               </TechSkillCard>
             </TSCardContainer>
 
-            <TSCardContainer>
+            <TSCardContainer variants={techSkillCardAnim}>
               <TechSkillCard className="javascript__icon">
                 <JavascriptIcon />
                 <h4>JavaScript</h4>
@@ -99,7 +146,7 @@ const AboutSection = () => {
               </TechSkillCard>
             </TSCardContainer>
 
-            <TSCardContainer>
+            <TSCardContainer variants={techSkillCardAnim}>
               <TechSkillCard className="css__icon">
                 <ScssAndCssIcon />
                 <h4>SCSS / CSS3</h4>
@@ -115,7 +162,7 @@ const AboutSection = () => {
               </TechSkillCard>
             </TSCardContainer>
 
-            <TSCardContainer>
+            <TSCardContainer variants={techSkillCardAnim}>
               <TechSkillCard className="html__icon">
                 <HtmlIcon />
                 <h4>HTML5</h4>
@@ -123,7 +170,7 @@ const AboutSection = () => {
               </TechSkillCard>
             </TSCardContainer>
 
-            <TSCardContainer>
+            <TSCardContainer variants={techSkillCardAnim}>
               <TechSkillCard className="git__icon">
                 <GitAndGithubIcon />
                 <h4>GitHub / Git</h4>
