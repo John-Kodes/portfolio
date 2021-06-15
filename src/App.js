@@ -50,11 +50,7 @@ const PageLayout = styled(motion.div)`
     [main-content-end margin-right-start] minmax(0rem, 1fr)
     [margin-right-end];
 
-  grid-template-rows: 6.6rem 80vh 136.7rem minmax(50rem, max-content);
-
-  @media only screen and (min-height: 50em) {
-    grid-template-rows: 6.6rem 80vh min-content minmax(50rem, max-content);
-  }
+  grid-template-rows: 6.6rem 80vh max-content minmax(50rem, max-content);
 
   @media only screen and (min-height: 50em) and (orientation: landscape) {
     grid-template-rows: 6.6rem 64rem min-content minmax(50rem, max-content);

@@ -144,7 +144,7 @@ const Photo = styled(motion.img)`
   height: 95rem;
   bottom: -20rem;
   right: -10rem;
-  z-index: 2;
+  z-index: 1;
 
   transition: all 0.4s;
 

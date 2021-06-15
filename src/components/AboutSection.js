@@ -15,10 +15,10 @@ import { ReactComponent as ScssAndCssIcon } from "../img/scssAndCss.svg";
 import { ReactComponent as GitAndGithubIcon } from "../img/gitAndGithub.svg";
 
 const AboutSection = () => {
-  const [element, controls] = ScrollInHook();
+  const [element, controls] = ScrollInHook(0.1);
 
   const [bioEl, bioCtrl] = ScrollInHook(0.7);
-  const [techSkillsEl, techSkillsCtrl] = ScrollInHook(0.5);
+  const [techSkillsEl, techSkillsCtrl] = ScrollInHook(0.3);
 
   const bioAnim = {
     show: {

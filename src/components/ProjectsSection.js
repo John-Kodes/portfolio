@@ -9,7 +9,7 @@ import { letterAnim, PageAnim, ScrollInHook } from "../animations";
 import styled from "styled-components";
 
 const ProjectsSection = () => {
-  const [element, controls] = ScrollInHook(0.5);
+  const [element, controls] = ScrollInHook(0.1);
 
   const visitBtnAnim = {
     initial: {
@@ -21,6 +21,7 @@ const ProjectsSection = () => {
       transition: { duration: 0.2 },
     },
   };
+
   return (
     <StyledProjectsSection
       variants={PageAnim}

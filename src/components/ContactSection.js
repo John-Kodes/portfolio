@@ -8,7 +8,7 @@ import { PageAnim, ScrollInHook } from "../animations";
 import styled from "styled-components";
 
 const ContactSection = () => {
-  const [element, controls] = ScrollInHook(0.5);
+  const [element, controls] = ScrollInHook(0.2);
 
   const submitAnim = {
     hover: { y: -4 },
