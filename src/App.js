@@ -1,7 +1,8 @@
 // Components
 import Nav from "./components/Nav";
 // Animation
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 // Styles
 import styled, { ThemeProvider } from "styled-components";
 import GlobalTheme from "./globals/GlobalTheme";
@@ -13,6 +14,15 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
 function App() {
+  const controls = useAnimation();
+  const [element, view] = useInView({ threshold: 0.5 });
+  if (view) {
+    controls.start("show");
+  } else {
+    controls.start("hidden");
+  } //return [element, controls]
+
+  // <Motion.Element variants={animationObject} animate={controls} initial="initial" ref={element from useInView} />
   return (
     <ThemeProvider theme={GlobalTheme}>
       <GlobalStyles />

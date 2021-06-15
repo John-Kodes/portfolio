@@ -3,13 +3,30 @@ import { ReactComponent as GitHubLink } from "../img/GitHubLink.svg";
 import { ReactComponent as LinkedInLink } from "../img/LinkedInLink.svg";
 import { ReactComponent as TwitterLink } from "../img/TwitterLink.svg";
 // Animation
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 // Styles
 import styled from "styled-components";
 
 const Footer = () => {
+  const controls = useAnimation();
+  const [element, view] = useInView({ threshold: 0 });
+
+  if (view) controls.start("show");
+  else controls.start("hidden");
+
+  const footerAnim = {
+    show: { opacity: 1, transition: { delay: 0.2 } },
+    hidden: { opacity: 0, transition: { delay: 0.2 } },
+  };
+
   return (
-    <FooterStyled>
+    <FooterStyled
+      variants={footerAnim}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
       <SocialBox>
         <a
           target="_blank"

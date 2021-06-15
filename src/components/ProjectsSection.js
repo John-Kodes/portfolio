@@ -4,11 +4,13 @@ import { ReactComponent as GithubLogo } from "../img/github.svg";
 import { ReactComponent as Arrow } from "../img/ArrowBtn.svg";
 // Animation
 import { motion } from "framer-motion";
-import { letterAnim } from "../animations";
+import { letterAnim, PageAnim, ScrollInHook } from "../animations";
 // Styles
 import styled from "styled-components";
 
 const ProjectsSection = () => {
+  const [element, controls] = ScrollInHook(0.5);
+
   const visitBtnAnim = {
     initial: {
       transition: { duration: 0.05 },
@@ -20,7 +22,13 @@ const ProjectsSection = () => {
     },
   };
   return (
-    <StyledProjectsSection id="section-projects">
+    <StyledProjectsSection
+      variants={PageAnim}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+      id="section-projects"
+    >
       <h1>Stuff I've made</h1>
       <ProjectCard>
         <CardDesc>

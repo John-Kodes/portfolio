@@ -3,17 +3,26 @@ import { ReactComponent as ContactDecor } from "../img/contactDecor.svg";
 import { ReactComponent as EmailIcon } from "../img/EmailIcon.svg";
 // Animation
 import { motion } from "framer-motion";
+import { PageAnim, ScrollInHook } from "../animations";
 // Styles
 import styled from "styled-components";
 
 const ContactSection = () => {
+  const [element, controls] = ScrollInHook(0.5);
+
   const submitAnim = {
     hover: { y: -4 },
     tap: { y: 2 },
   };
 
   return (
-    <StyledContactSection id="section-contact">
+    <StyledContactSection
+      variants={PageAnim}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+      id="section-contact"
+    >
       <h1 className="title-faint">...interested?</h1>
       <ContactCard>
         <ContactDecor />
@@ -82,6 +91,7 @@ const ContactEmail = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+  z-index: 5;
 
   svg {
     display: inline-block;

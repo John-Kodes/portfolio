@@ -1,5 +1,6 @@
 // Animation
 import { motion } from "framer-motion";
+import { PageAnim, ScrollInHook } from "../animations";
 // Styles
 import styled from "styled-components";
 // SVG
@@ -14,9 +15,17 @@ import { ReactComponent as ScssAndCssIcon } from "../img/scssAndCss.svg";
 import { ReactComponent as GitAndGithubIcon } from "../img/gitAndGithub.svg";
 
 const AboutSection = () => {
+  const [element, controls] = ScrollInHook();
+
   return (
-    <StyledAboutSection id="section-about">
-      <AboutGrid>
+    <StyledAboutSection>
+      <AboutGrid
+        variants={PageAnim}
+        animate={controls}
+        initial="hidden"
+        ref={element}
+        id="section-about"
+      >
         <AboutText>
           <h1>A bit about me</h1>
           <p>
