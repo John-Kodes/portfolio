@@ -1,3 +1,4 @@
+import { useState } from "react";
 // Components
 import { scrollToHandler } from "./Handlers";
 // SVG & Img
@@ -13,6 +14,8 @@ import { letterAnim } from "../animations";
 import styled from "styled-components";
 
 const Header = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <StyledHeader id="section-header">
       <CreditBox className="credit">
@@ -64,10 +67,18 @@ const Header = () => {
       </Content>
       <PhotoContainer>
         <Photo
+          className={isLoaded ? "" : "hidden"}
+          onLoad={() => setIsLoaded(true)}
           src={photo}
           alt="John Daniel Semine Photo. Credit: Joan Semine"
         />
-        <div className="round-image-container">
+        <div
+          className={
+            isLoaded
+              ? "round-image-container"
+              : "round-image-container hidden--circle"
+          }
+        >
           <img
             src={roundPhoto}
             alt="John Daniel Semine Photo Round"
@@ -80,10 +91,20 @@ const Header = () => {
 };
 
 const PhotoContainer = styled.div`
+  .hidden {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  .hidden--circle {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
   .round-image-container {
     position: relative;
     display: none;
     visibility: hidden;
+
+    transition: all 0.4s;
 
     @media only screen and (max-width: 44em) {
       display: block;
@@ -121,6 +142,8 @@ const Photo = styled(motion.img)`
   bottom: -20rem;
   right: -10rem;
   z-index: 2;
+
+  transition: all 0.4s;
 
   @media only screen and (max-width: 70em) {
     right: -20rem;
