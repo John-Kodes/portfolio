@@ -2,7 +2,7 @@ export const scrollToHandler = (id) => {
   const yOffset = (id) => {
     switch (id) {
       case "section-about":
-        return 80;
+        return -100;
       case "section-projects":
         return 0;
       case "section-contact":
