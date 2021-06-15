@@ -53,7 +53,7 @@ const PageLayout = styled(motion.div)`
   grid-template-rows: 6.6rem 80vh max-content minmax(50rem, max-content);
 
   @media only screen and (min-height: 50em) and (orientation: landscape) {
-    grid-template-rows: 6.6rem 64rem min-content minmax(50rem, max-content);
+    grid-template-rows: 6.6rem 64rem max-content minmax(50rem, max-content);
   }
 
   align-items: center;

@@ -2,7 +2,7 @@
 import { scrollToHandler } from "./Handlers";
 // SVG
 import { ReactComponent as PenIcon } from "../img/penIcon.svg";
-import { ReactComponent as Logo } from "../img/JDS_logo.svg";
+import { ReactComponent as Logo } from "../img/JDS_logo_FINAL.svg";
 // Animation
 import { motion } from "framer-motion";
 // Styles
