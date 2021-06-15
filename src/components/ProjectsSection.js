@@ -98,6 +98,7 @@ const CardContent = styled(motion.div)`
   background-image: linear-gradient(185deg, rgba(0, 0, 0, 0.9), #0f091ae2),
     url(${polyBg});
   background-attachment: fixed;
+  background-size: cover;
   z-index: 2;
 
   @media only screen and (max-width: 55em) {
