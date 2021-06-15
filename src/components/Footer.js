@@ -4,16 +4,12 @@ import { ReactComponent as LinkedInLink } from "../img/LinkedInLink.svg";
 import { ReactComponent as TwitterLink } from "../img/TwitterLink.svg";
 // Animation
 import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { ScrollInHook } from "../animations";
 // Styles
 import styled from "styled-components";
 
 const Footer = () => {
-  const controls = useAnimation();
-  const [element, view] = useInView({ threshold: 0 });
-
-  if (view) controls.start("show");
-  else controls.start("hidden");
+  const [element, controls] = ScrollInHook(0);
 
   const footerAnim = {
     show: { opacity: 1, transition: { delay: 0.2 } },

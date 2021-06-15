@@ -17,6 +17,13 @@ import { ReactComponent as GitAndGithubIcon } from "../img/gitAndGithub.svg";
 const AboutSection = () => {
   const [element, controls] = ScrollInHook();
 
+  const [bioEl, bioCtrl] = ScrollInHook(0.7);
+
+  const bioAnim = {
+    show: { x: 0, opacity: 1, transition: { delay: 0.3, duration: 1 } },
+    hidden: { x: -50, opacity: 0, transition: { delay: 0.3, duration: 1 } },
+  };
+
   return (
     <StyledAboutSection>
       <AboutGrid
@@ -26,7 +33,7 @@ const AboutSection = () => {
         ref={element}
         id="section-about"
       >
-        <AboutText>
+        <Bio variants={bioAnim} animate={bioCtrl} initial="hidden" ref={bioEl}>
           <h1>A bit about me</h1>
           <p>
             Hello! My name is Daniel. I’m a Front-End Developer based in Dubai.
@@ -36,7 +43,7 @@ const AboutSection = () => {
             <br /> I have a passion for creating code, animations and also
             creating intuitive, dynamic user experiences.
           </p>
-        </AboutText>
+        </Bio>
 
         <SkillCardContainer>
           <SkillCard className="first">
@@ -434,7 +441,7 @@ const SkillCardContainer = styled(motion.div)`
   }
 `;
 
-const AboutText = styled(motion.div)`
+const Bio = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 5rem;
