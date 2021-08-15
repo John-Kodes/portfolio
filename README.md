@@ -1,6 +1,6 @@
 # John Daniel Semine Portfolio
 
-[Demo](https://johndanielsemine.netlify.app/)
+[Demo](https://johndaniel.netlify.app/)
 
 A website-portfolio to show case myself, the technologies I know and what I'm capable of. The website was built with CSS Grids, FlexBox, framer-motion, styled-components and react-intersection-observer.
 
